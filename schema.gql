@@ -2,10 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type HelloWorld {
+type HelloWorldEntity {
   message: String!
 }
 
 type Query {
-  helloWorld: HelloWorld!
+  helloWorld: HelloWorldEntity!
 }

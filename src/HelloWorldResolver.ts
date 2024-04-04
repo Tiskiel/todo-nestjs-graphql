@@ -1,10 +1,10 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { HelloWorld } from './HelloWorld';
+import { HelloWorldEntity } from './HelloWorldEntity';
 
-@Resolver(HelloWorld)
+@Resolver(HelloWorldEntity)
 export class HelloWorldResolver {
-  @Query(() => HelloWorld)
-  async helloWorld(): Promise<HelloWorld> {
+  @Query(() => HelloWorldEntity)
+  async helloWorld(): Promise<HelloWorldEntity> {
     return {
       message: 'Hello, World!',
     };
