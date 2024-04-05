@@ -1,5 +1,5 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { HelloWorldEntity } from './HelloWorldEntity';
+import { HelloWorldEntity } from '../Entities/HelloWorldEntity';
 
 @Resolver(HelloWorldEntity)
 export class HelloWorldResolver {
