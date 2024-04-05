@@ -3,7 +3,7 @@ import { UserFindAllUseCase } from '../UseCases/UserFindAllUseCase';
 import { Resolver } from '@nestjs/graphql';
 import { User } from '../Entities/User';
 
-@Resolver(User)
+@Resolver(() => [User])
 export class UserResolver {
   constructor(private readonly _findAll: UserFindAllUseCase) {}
 

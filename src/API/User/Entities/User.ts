@@ -8,6 +8,9 @@ export class User {
   @Field()
   email: string;
 
+  @Field(() => String, { nullable: true })
+  name?: string;
+
   //No field decorator means this field is not exposed to the GraphQL schema
   password: string;
 
