@@ -8,6 +8,8 @@ export class UserFindAllUseCase {
 
   async handle(): Promise<User[]> {
     try {
+      console.log(await this._userRepository.findAll());
+
       return await this._userRepository.findAll();
     } catch (error) {
       throw new BadRequestException(error.message);

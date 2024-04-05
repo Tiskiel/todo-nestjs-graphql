@@ -14,9 +14,9 @@ export class User {
   //No field decorator means this field is not exposed to the GraphQL schema
   password: string;
 
-  @Field(() => GraphQLISODateTime)
-  createdAt: Date;
+  @Field(() => GraphQLISODateTime, { nullable: true })
+  createdAt?: Date;
 
-  @Field(() => GraphQLISODateTime)
-  updatedAt: Date;
+  @Field(() => GraphQLISODateTime, { nullable: true })
+  updatedAt?: Date;
 }
