@@ -4,7 +4,7 @@ import { User } from '../Entities/User';
 
 @Injectable()
 export class UserFindAllUseCase {
-  constructor(private _userRepository: UserRepository) {}
+  constructor(private readonly _userRepository: UserRepository) {}
 
   async handle(): Promise<User[]> {
     try {

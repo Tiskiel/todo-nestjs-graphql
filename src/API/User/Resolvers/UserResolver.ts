@@ -3,9 +3,9 @@ import { UserFindAllUseCase } from '../UseCases/UserFindAllUseCase';
 import { Resolver } from '@nestjs/graphql';
 import { User } from '../Entities/User';
 
-@Resolver(() => [User])
+@Resolver(User)
 export class UserResolver {
-  constructor(private _findAll: UserFindAllUseCase) {}
+  constructor(private readonly _findAll: UserFindAllUseCase) {}
 
   @Query(() => [User])
   async findAllUsers(): Promise<User[]> {
