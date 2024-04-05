@@ -1,6 +1,5 @@
-import { Query } from '@nestjs/common';
 import { UserFindAllUseCase } from '../UseCases/UserFindAllUseCase';
-import { Resolver } from '@nestjs/graphql';
+import { Query, Resolver } from '@nestjs/graphql';
 import { User } from '../Entities/User';
 
 @Resolver(() => [User])
