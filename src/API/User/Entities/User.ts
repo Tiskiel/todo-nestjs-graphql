@@ -1,7 +1,7 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, GraphQLISODateTime, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class UserEntity {
+export class User {
   @Field(() => Int)
   id: number;
 
@@ -11,9 +11,9 @@ export class UserEntity {
   //No field decorator means this field is not exposed to the GraphQL schema
   password: string;
 
-  @Field()
+  @Field(() => GraphQLISODateTime)
   createdAt: Date;
 
-  @Field()
+  @Field(() => GraphQLISODateTime)
   updatedAt: Date;
 }
