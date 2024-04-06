@@ -9,7 +9,7 @@ export class UserRepository {
     return this._prisma.user.findMany();
   }
 
-  findOne(id: number) {
+  findById(id: number) {
     return this._prisma.user.findUnique({
       where: {
         id,
