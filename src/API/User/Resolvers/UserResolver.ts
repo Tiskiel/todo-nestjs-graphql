@@ -16,7 +16,9 @@ export class UserResolver {
   }
 
   @Query(() => User)
-  async findUserById(@Args('id') id): Promise<User> {
+  async findUserById(
+    @Args('id', { type: () => Int }) id: number,
+  ): Promise<User> {
     return await this._findById.handle(id);
   }
 }

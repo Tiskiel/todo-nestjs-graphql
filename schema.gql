@@ -13,6 +13,7 @@ type HelloWorldEntity {
 
 type Query {
   findAllUsers: [User!]!
+  findUserById(id: Int!): User!
   helloWorld: HelloWorldEntity!
 }
 
