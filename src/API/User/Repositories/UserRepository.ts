@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/Core/Prisma/PrismaService';
+import { UserDto } from '../Type/UserDto';
 
 @Injectable()
 export class UserRepository {
@@ -15,5 +16,17 @@ export class UserRepository {
         id,
       },
     });
+  }
+
+  create(data: { name: string; email: string; password: string }): UserDto {
+    return {
+      user: this._prisma.user.create({
+        data,
+      }),
+      response: {
+        message: 'User created successfully',
+        code: 201,
+      },
+    };
   }
 }
