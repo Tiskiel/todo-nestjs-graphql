@@ -5,6 +5,7 @@ import { UserResolver } from './Resolvers/UserResolver';
 import { UserFindAllUseCase } from './UseCases/UserFindAllUseCase';
 import { PrismaService } from 'src/Core/Prisma/PrismaService';
 import { UserFindByIdUseCase } from './UseCases/UserFindByIdUseCase';
+import { UserCreateUseCase } from './UseCases/UserCreateUseCase';
 
 @Module({
   imports: [CoreModule],
@@ -14,6 +15,7 @@ import { UserFindByIdUseCase } from './UseCases/UserFindByIdUseCase';
     UserResolver,
     UserFindAllUseCase,
     UserFindByIdUseCase,
+    UserCreateUseCase,
     PrismaService,
   ],
 })
