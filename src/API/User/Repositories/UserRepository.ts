@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/Core/Prisma/PrismaService';
 import { CreateUserDto } from '../Dto/CreateUserDto';
-import { UserType } from '../Type/UserType';
-import { User } from '../Entities/User';
+import { Bcrypt } from 'src/Core/Security/Encryption/Bcrypt';
 
 @Injectable()
 export class UserRepository {
@@ -26,12 +25,7 @@ export class UserRepository {
         data,
       });
     } catch (error) {
-      // Gérer les erreurs ici, par exemple :
-      console.error(
-        "Une erreur s'est produite lors de la création de l'utilisateur :",
-        error,
-      );
-      throw error;
+      throw new BadRequestException(error.message);
     }
   }
 }
