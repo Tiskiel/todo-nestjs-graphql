@@ -3,7 +3,6 @@ import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { User } from '../Entities/User';
 import { UserFindByIdUseCase } from '../UseCases/UserFindByIdUseCase';
 import { CreateUserDto } from '../Dto/CreateUserDto';
-import { UserType } from '../Type/UserType';
 import { UserCreateUseCase } from '../UseCases/UserCreateUseCase';
 
 @Resolver(() => User)
@@ -27,7 +26,7 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
-  async createUser(@Args('data') data: CreateUserDto): Promise<UserType> {
+  async createUser(@Args('data') data: CreateUserDto): Promise<User> {
     return await this._create.handle(data);
   }
 }
